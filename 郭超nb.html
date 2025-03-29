@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>郭超NB</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+        }
+        h1 {
+            font-size: 48px;
+            color: #fff;
+            animation: glow 0.5s ease-in-out infinite alternate;
+        }
+        .corner-text {
+            position: absolute;
+            font-size: 48px;
+            color: #fff;
+            animation: glow 0.5s ease-in-out infinite alternate;
+            display: none;
+        }
+        #top-left {
+            top: 20px;
+            left: 20px;
+        }
+        #top-right {
+            top: 20px;
+            right: 20px;
+        }
+        #bottom-left {
+            bottom: 20px;
+            left: 20px;
+        }
+        #bottom-right {
+            bottom: 20px;
+            right: 20px;
+        }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+            }
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>郭超NB</h1>
+    <span id="top-left" class="corner-text">郭</span>
+    <span id="top-right" class="corner-text">超</span>
+    <span id="bottom-left" class="corner-text">牛</span>
+    <span id="bottom-right" class="corner-text">比</span>
+    <script>
+        const texts = ['top-left', 'top-right', 'bottom-left', 'bottom-right'];
+        let clickCount = 0;
+        document.addEventListener('click', function () {
+            if (clickCount < texts.length) {
+                const element = document.getElementById(texts[clickCount]);
+                element.style.display = 'block';
+                clickCount++;
+            }
+        });
+    </script>
+</body>
+</html>    
